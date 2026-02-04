@@ -1,0 +1,7 @@
+config/_default/hugo.toml
+config/_default/menu.toml
+README.md
+content/README.md
+content/homework/README.md
+content/labs/README.md
+content/projects/README.md

@@ -1,0 +1,21 @@
+# Our defined "resources" menu (currently imported in the sidebarfootermenu specified in params.toml).
+[[resources]]
+  name = 'Resources'                 # Top-level parent (not clickable -> collapsible group)
+  url = "#"                          # won't show this entry without a nonempty url to link to.  "#" at least won't take you off the page you're on!
+  identifier = 'resources-root'      # lets the rest of these entries nest beneath this one
+  weight = 1                         # this label shows; clicking expands
+[[resources]]
+  name = "HTGAA Spring 2026"
+  url  = "https://2026a.htgaa.org/"
+  parent = 'resources-root'
+  weight = 100
+[[resources]]
+  name = "Editing Guide"
+  url  = "https://pages.htgaa.org/2026a/course-pages/editing-guide/"
+  parent = 'resources-root'
+  weight = 150
+[[resources]]
+  name = "Build Failure Log"
+  url  = "https://pages.htgaa.org/2026a-michael-yang/FAILED-BUILDLOG.txt"
+  parent = 'resources-root'
+  weight = 200

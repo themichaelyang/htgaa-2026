@@ -1,0 +1,15 @@
+{{/* don't display chapter numbers in chapter pages (which it took from the page weights) and don't make chapter pages narrower than all other pages. */}}
+{{/* this is the contents of hugo-theme-relearn/layouts/chapter/article.html copied over, with the chapter number section commented out and "narrow" removed from the article class="" list */}}
+
+<article class="chapter">
+  <header class="headline">
+    {{- partial "content-header.html" . }}
+  </header>
+{{ partial "heading-pre.html" . }}  {{/* {{ with .Params.Weight }}<div class="article-subheading">{{ T "Chapter" . }}</div>{{ end }} */}}
+{{ partial "heading.html" . }}{{ partial "heading-post.html" . }}
+
+{{ partial "article-content.html" . }}
+  <footer class="footline">
+    {{- partial "content-footer.html" . }}
+  </footer>
+</article>

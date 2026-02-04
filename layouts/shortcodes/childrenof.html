@@ -1,0 +1,66 @@
+{{- /* layouts/shortcodes/childrenof.html */ -}}
+{{/* This calls {{% children %}} on a specified directory (path= param, where / is inside the top-level content/ directory).
+     It takes all arguments which {{%children%}} does: see https://mcshelby.github.io/hugo-theme-relearn/shortcodes/children/
+     Just like {{%children%}}, "type" can be "tree" (bulleted list), "card" , "flat", or "list" (ridiculously huge version of flat)
+     Examples:  {{% childrenof path="/docs" %}}
+		{{% childrenof path="/docs" type="card" description="true" %}},
+		{{% childrenof path="/guides" type="tree" depth="2" sort="title" %}}
+		{{% childrenof path="/reference" type="flat" depth="999" showhidden="true" %}}
+*/}}
+
+{{- $sc := . -}}
+{{- $hostPage := .Page -}}
+{{- $path := $sc.Get "path" | default ($sc.Get 0) -}}
+
+{{/* helpers: coerce stringy flags to bools */}}
+{{- $truey := slice "true" "1" "yes" "on" -}}
+
+{{- $breadcrumb := false -}}
+{{- with $sc.Get "breadcrumb" -}}
+  {{- if in $truey (lower (printf "%v" .)) }}{{- $breadcrumb = true -}}{{ end -}}
+{{- end -}}
+
+{{- $description := false -}}
+{{- with $sc.Get "description" -}}
+  {{- if in $truey (lower (printf "%v" .)) }}{{- $description = true -}}{{ end -}}
+{{- end -}}
+
+{{- $image := true -}}
+{{- with $sc.Get "image" -}}
+  {{- if in $truey (lower (printf "%v" .)) -}}
+    {{- $image = true -}}
+  {{- else -}}
+    {{- $image = false -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $showhidden := false -}}
+{{- with $sc.Get "showhidden" -}}
+  {{- if in $truey (lower (printf "%v" .)) }}{{- $showhidden = true -}}{{ end -}}
+{{- end -}}
+
+{{/* depth & headingdepth as int (Hugo cast.ToInt) */}}
+{{- $depth := 1 -}}
+{{- with $sc.Get "depth" -}}
+  {{- $depth = (cast.ToInt .) -}}
+{{- end -}}
+{{- $headingdepth := 2 -}}
+{{- with $sc.Get "headingdepth" -}}
+  {{- $headingdepth = (cast.ToInt .) -}}
+{{- end -}}
+
+{{- with site.GetPage $path -}}
+  {{- $childrenMarkdown := partial "shortcodes/children.html" (dict
+      "page"         .
+      "breadcrumb"   $breadcrumb
+      "cardtemplate" ($sc.Get "cardtemplate" | default "default")
+      "depth"        $depth
+      "description"  $description
+      "headingdepth" $headingdepth
+      "image"        $image
+      "showhidden"   $showhidden
+      "sort"         ($sc.Get "sort"         | default "auto")
+      "type"         ($sc.Get "type"         | default "tree")
+  ) -}}
+  {{- $hostPage.RenderString $childrenMarkdown -}}
+{{- end -}}

@@ -1,0 +1,10 @@
+{{/* Must list all standard buttons (unless you want to remove them) - in order of appearance */}}
+{{ partial "topbar/button/edit.html"     (dict "page" .) }}
+{{ partial "topbar/button/edit-wysiwyg.html" (dict "page" .) }}      {{/* custom wysiwyg editor button */}}
+{{ partial "topbar/button/source.html"   (dict "page" .) }}
+{{ partial "topbar/button/markdown.html" (dict "page" .) }}
+{{ partial "topbar/button/print.html"    (dict "page" .) }}
+{{ partial "topbar/button/variantswitcher.html" (dict "page" .) }}   {{/* custom Light/Dark color ("variant") switcher button */}}
+{{ partial "topbar/button/prev.html"     (dict "page" .) }}
+{{ partial "topbar/button/next.html"     (dict "page" .) }}
+{{ partial "topbar/button/more.html" (dict "page" .) }}              {{/* More menu is typically last */}}

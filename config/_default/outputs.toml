@@ -1,0 +1,4 @@
+# This specifies the different output formats which should be supported for each type of page.
+home    = ["html", "rss", "print"]
+section = ["html", "rss", "print"]
+page    = ["html", "rss", "print"]

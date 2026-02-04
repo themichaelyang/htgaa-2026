@@ -1,0 +1,12 @@
+[images]
+  dir = ":resourceDir/_gen" # should be the default, but let's be explicit
+  maxAge = "168h" # 1 week
+
+[assets]
+  dir = ":resourceDir/_gen" # should be the default, but let's be explicit
+  maxAge = "168h" # 1 week
+
+[getresource]
+  # Remote resources fetched via resources.GetRemote
+  dir = ":cacheDir/:project" # should be the default, but let's be explicit
+  maxAge = "720h" # 30 days

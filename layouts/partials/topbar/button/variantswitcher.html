@@ -1,0 +1,150 @@
+{{/* Topbar button implementing a button version of the "variant switcher" ("light/dark" color theme switcher) */}}
+
+{{/* Get possible themes from .page.Site.Params.themeVariant */}}
+{{- $variants := slice -}}
+{{- with .page.Site.Params.themeVariant }}
+  {{- range . }}
+    {{- if reflect.IsMap . -}}
+      {{- $id := .identifier -}}
+      {{- if $id }}
+        {{- $title := .name | default $id -}}
+        {{- $variants = $variants | append (dict "id" $id "title" $title) -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $variants = $variants | append (dict "id" . "title" .) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if ge (len $variants) 2 -}}
+  {{- $buf := newScratch -}}
+  {{- /* Build list (no bullets); no fixed min-width here */ -}}
+  {{- $buf.Set "html" `<div class="rl-variant-popup">` -}}
+  {{- $buf.Add "html" `<ul class="rl-variant-list">` -}}
+  {{- range $variants }}
+    {{- $buf.Add "html" (printf `<li><a class="rl-variant" data-variant="%s" href="#">%s</a></li>` .id .title) -}}
+  {{- end -}}
+  {{- $buf.Add "html" `</ul>
+
+<style>
+/* Make the overlay content auto-size to its contents */
+.btn-variants .topbar-content{
+  padding:.25rem;
+  width:max-content;            /* intrinsic width = longest label */
+  min-width:0;
+  max-width:calc(100vw - 2rem); /* prevent overflow on narrow screens */
+}
+/* No bullets + comfy rows; keep labels on one line so width == text length */
+.rl-variant-list{ list-style:none; margin:0; padding:0; }
+.rl-variant-list li a{
+  display:block;
+  padding:.2rem .5rem;          /* ↓ row padding */
+  line-height:1.25;             /* ↓ line-height */
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+/* Active marker */
+.rl-variant-list li a.is-active{
+  font-weight:600;
+}
+.rl-variant-list li a.is-active::before{
+  content:"✓ ";
+  font-weight:inherit;
+}
+
+/* Subtle hover/focus */
+.rl-variant-list li a:hover,
+.rl-variant-list li a:focus-visible{ text-decoration:underline; outline:0; }
+</style>
+
+<script>(function(){
+  // Find this flyout
+  var root = document.currentScript && document.currentScript.previousElementSibling;
+  root = (root && root.previousElementSibling) || document.querySelector('.rl-variant-popup');
+  if(!root) return;
+
+  var rows = root.querySelectorAll('a.rl-variant');
+
+  // Make the popup itself focusable so we can deflect the initial auto-focus
+  if (!root.hasAttribute('tabindex')) root.tabIndex = -1;
+
+  // --- Which variant is actually applied in THIS tab? ---
+  function getAppliedVariant(){
+    var html = document.documentElement;
+    return html && html.getAttribute('data-r-theme-variant') || null;
+  }
+
+  function markActive(){
+    var id = getAppliedVariant();
+    rows.forEach(function(a){
+      a.classList.toggle('is-active', !!id && a.getAttribute('data-variant') === id);
+    });
+  }
+
+  // Initial mark + keep in sync when this tab switches via the built-in picker
+  markActive();
+  document.addEventListener('themeVariantLoaded', function(){ // fired by Relearn on load/switch
+    markActive();
+  });
+
+  // Refresh mark whenever the flyout becomes interactive
+  root.addEventListener('mouseenter', markActive, {passive:true});
+  root.addEventListener('focusin',   markActive);
+
+  // --- Deflect the very first auto-focus inside the flyout -------------------
+  // Some scripts auto-focus the first link on open. We want focus styling,
+  // but not the "stuck-on-open" focus. Redirect the *first* focus to the popup.
+  var deflectedOnce = false;
+  root.addEventListener('focusin', function onFocusIn(e){
+    if (!deflectedOnce && e.target && e.target.matches && e.target.matches('a.rl-variant')){
+      deflectedOnce = true;
+      root.focus({preventScroll:true});
+    }
+  });
+  // Reset the deflector when focus leaves the flyout again
+  root.addEventListener('focusout', function(e){
+    if (!root.contains(e.relatedTarget)) deflectedOnce = false;
+  });
+  root.addEventListener('mouseleave', function(){ deflectedOnce = false; }, {passive:true});
+
+  // --- Click to switch: write exactly the key the theme uses, then reload ----
+  rows.forEach(function(a){
+    a.addEventListener('click', function(ev){
+      ev.preventDefault();
+      var id  = a.getAttribute('data-variant');
+      var key = (window.relearn && typeof window.relearn.absBaseUri === 'string')
+                ? (window.relearn.absBaseUri + '/variant')
+                : null;
+      try{
+        if (key && window.relearn && typeof window.relearn.setItem === 'function') {
+          window.relearn.setItem(window.localStorage, key, id);
+        } else if (key) {
+          localStorage.setItem(key, id);
+        }
+      }catch(e){}
+      location.reload();
+    });
+  });
+
+  // --- Width calc ------------------------------------------
+  var widest = 0;
+  rows.forEach(function(r){ widest = Math.max(widest, Math.ceil(r.getBoundingClientRect().width)); });
+  var wrap = root.closest('.topbar-content');
+  if(wrap && widest){
+    var px = Math.min(widest + 12, Math.max(220, window.innerWidth - 32));
+    wrap.style.width = px + 'px';
+  }
+})();</script>
+</div>` -}}
+
+  {{- partial "topbar/func/button.html" (dict
+      "page"    .page
+      "class"   "btn-variantswitcher"
+      "href"    "javascript:toggleTopbarFlyout (this)"
+      "icon"    "circle-half-stroke"
+      "hint"    "Switch color theme (Light/Dark and colors)"
+      "onempty" "hide"
+      "content" (($buf.Get "html") | safeHTML)
+  ) -}}
+{{- end -}}

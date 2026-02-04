@@ -1,0 +1,12 @@
+{{/* layouts/_default/_markup/render-codeblock-mermaid.html */}}
+{{/* Make zoom work in ```mermaid {align="left" zoom="true"}  ("code-fence attributes" - documented to work but didn't)  */}}
+{{/* It did and still does work to wrap in {{< mermaid align="left" zoom="true" >}} ... {{< /mermaid >}} instead of ```mermaid ... ``` */}}
+{{/* see https://github.com/McShelby/hugo-theme-relearn/issues/1150 */}}
+{{/* note that if zoom=false (here or in params.mermaidZoom) alignment is ignored? */}}
+{{- partial "shortcodes/mermaid.html" (dict
+  "page"       .Page
+  "attributes" .Attributes
+  "content"    .Inner
+  "align"      (index .Attributes "align")
+  "zoom"       (index .Attributes "zoom")
+) }}

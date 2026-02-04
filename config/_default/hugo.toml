@@ -1,0 +1,10 @@
+title = "2026a-michael-yang"
+
+enableEmoji = true    # so you can include :dumpling: in your markdown
+
+# baseURL is set (overridden) when hugo is run, not needed (or effective) here.
+
+[params]
+  # editURL and editWysiwygURL enable edit buttons (pencil icon/ W icon) in the top bar end area (=right side)
+  editURL        = "https://edit.htgaa.org/2026a-michael-yang/webpages.git/src/branch/main/content/"
+  editWysiwygURL = "https://edit.htgaa.org/WYSIWYG/edit-wysiwyg.html#4jo_url=https://edit.htgaa.org/2026a-michael-yang/webpages.git/raw/branch/main/content/"

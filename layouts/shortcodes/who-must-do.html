@@ -1,0 +1,10 @@
+{{/* print the notice/table of whether mit/harvard students and/or committed listeners must do this HW section; call it like this:
+	{{% who-must-do  MH="mit/harvard text"  CL="CL text" %}}
+     those "text" entries will often be: "Mandatory" or "Required", "Optional", "Optional (requires lab access)" */}}
+{{- $mitharvard := .Get "MH" -}}
+{{- $commlisten := .Get "CL" -}}
+> [!note] Assignees for the following sections
+> <table>
+> <tr><td style="padding:2px 8px; white-space:nowrap;">MIT/Harvard students</td><td style="padding:2px 8px; width:100%;">{{ $mitharvard }}</td></tr>
+> <tr><td style="padding:2px 8px; white-space:nowrap;">Committed Listeners</td><td style="padding:2px 8px; width:100%;">{{ $commlisten }}</td></tr>
+> </table>

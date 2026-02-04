@@ -1,0 +1,24 @@
+# configure markdown features
+
+[highlight]
+  noClasses = false  # when false, code blocks follow the chosen color theme (light/dark/neon/etc) and allow variant-based styling.
+[goldmark]
+  [goldmark.renderer]
+    unsafe = true    # "unsafe" means allow embeding HTML in Markdown, which we do lots of.
+  [goldmark.parser]
+    wrapStandAloneImageWithinParagraph = false  # if true wraps <p> around images and e.g. {height="100px"} gets applied to the <p>, not the image.
+    [goldmark.parser.attribute]
+      block = true   # custom attributes {var=value ...} can be applied to "blocks" (paragaphs, blockquotes, images, ...)
+      title = true   # custom attributes {var=value ...} can be applied at the end of #, ##, ###... headings.
+    [goldmark.extensions]
+      strikethrough = false  # disable to avoid conflict with extensions below (enable 'delete' to compensate)
+      [goldmark.extensions.extras.delete]
+        enable = true  # ~~strikethrough me~~
+      [goldmark.extensions.extras.insert]
+        enable = true  # ++underline me++
+      [goldmark.extensions.extras.mark]
+        enable = true  # ==highlight me==
+      [goldmark.extensions.extras.superscript]
+        enable = true  # 1^st^
+      [goldmark.extensions.extras.subscript]
+        enable = true  # H~2~O

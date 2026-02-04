@@ -1,0 +1,19 @@
+{{- /* This file fixes garbled table of contents entries if you have icons in section headings */ -}}
+{{- /* For places like headings it might be better to call it as {{% icon ... %}} rather than {{< icon ... >}} */ -}}
+{{- /* Usage: Just an icon: {{< icon "github" "brands" >}} */ -}}
+{{- /* With size: {{< icon icon="github" family="brands" size="2x" >}} */ -}}
+{{- /* With a11y label and extras: {{< icon icon="github" family="brands" class="fa-fw" title="GitHub" >}} */ -}}
+
+{{- $icon   := .Get "icon"   | default (.Get 0) -}}
+{{- $family := lower ( .Get "family" | default (.Get 1) | default "solid" ) -}}
+{{- $size   := .Get "size" -}}        {{/* e.g. xs, sm, lg, 2x… */}}
+{{- $title  := .Get "title" -}}       {{/* optional accessible label */}}
+{{- $extra  := .Get "class" -}}       {{/* any extra classes (fa-spin, fa-fw…) */}}
+
+{{- /* Map family to FA6 classes (Relearn ships FA 6.x) */ -}}
+{{- $famClass := "fa-solid" -}}
+{{- if in (slice "brands" "brand" "b" "fab") $family }}{{ $famClass = "fa-brands" }}{{ end -}}
+{{- if in (slice "regular" "r" "far") $family }}{{ $famClass = "fa-regular" }}{{ end -}}
+
+<i class="{{ $famClass }} fa-{{ $icon }}{{ with $size }} fa-{{ . }}{{ end }}{{ with $extra }} {{ . }}{{ end }}"
+   {{- if $title -}} role="img" aria-label="{{ $title }}"{{ else }} aria-hidden="true"{{ end -}}></i>

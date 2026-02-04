@@ -1,0 +1,57 @@
+# Don't show "Home" under the search box -- there are already two ways to get home on every page, the page title upper left & "breadcrumbs" top center
+disableLandingPageButton = true
+
+# A couple options configuring the [menu.shortcuts] menu in left nav bar (see file menu.toml)
+disableShortcutsTitle = true  # removes the ugly separator ("MORE") above shortcuts menu
+collapsibleMenu = true        # shows expander arrows (when items are nested)
+alwaysopen = false            # by default have nav bar sections collapsed
+
+
+# --- Sidebar FOOTER menu (in order of appearance) ---
+[[sidebarfootermenus]]
+  type = 'divider'                   # optional visual separator
+[[sidebarfootermenus]]
+  type = 'menu'                      # show a Hugo menu here
+  identifier = 'resources'           # brings in [menu.resources] from menu.toml
+  # If disableMenuTitle=false and the root entry of the menu lacks url= or has url="", then the root entry is considered a title; any child entries move up
+  # a nesting level (and without nesting, there can be no collapsing menus).
+  #   * if disableTitle=false the title is displayed in HUGE font
+  #   * if disableTitle=false the title is simply not displayed.
+  # Otherwise (disableMenuTitle=true or root entry has nonempty url=) the root entry is a real menu entry, and if it has children, that submenu is potentially
+  # collapsible (based on collapsibleMenu setting above). I have added js in assets/js/custom.js which will expand/contract with a click on the root entry
+  # if its url="#" (otherwise you have to click the tiny expander chevron to the left)
+  disableMenuTitle = true            # when disableMenuTitle=false if the root entry lacks url=, it is in HUGE font (but no collapsing).  if =true, root entry is a real entry and it can collapse.
+  disableTitle = false               # if there is a title (disableMenuTitle=false, root entry lacks url=), true here prevents the title from displaying.  (might as well not have one...)
+
+
+# --- Color themes for the color picker ---
+# "relearn-auto" follows device light/dark mode, with auto=[] listing first the light theme, then the dark theme.
+# Themes define their own display names, but we can override with name=
+[[themeVariant]]
+  identifier = 'relearn-auto'
+  auto = ['relearn-light', 'relearn-dark']
+  name = 'Device Auto Light/Dark'
+[[themeVariant]]
+  identifier = 'relearn-light'
+[[themeVariant]]
+  identifier = 'relearn-dark'
+[[themeVariant]]
+  identifier = 'learn'
+[[themeVariant]]
+  identifier = 'zen-auto'
+  auto = ['zen-light', 'zen-dark']
+  name = 'Zen Device Auto Light/Dark'
+[[themeVariant]]
+  identifier = 'zen-light'
+[[themeVariant]]
+  identifier = 'zen-dark'
+[[themeVariant]]
+  identifier = 'relearn-bright'
+[[themeVariant]]
+  identifier = 'red'
+[[themeVariant]]
+  identifier = 'green'
+[[themeVariant]]
+  identifier = 'blue'
+[[themeVariant]]
+  identifier = 'neon'
