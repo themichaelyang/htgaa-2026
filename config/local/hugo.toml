@@ -1,0 +1,8 @@
+# To allow local theme to build with relearn theme
+[outputFormats.print]
+name = 'print'
+baseName = 'index.print'
+isHTML = true
+mediaType = 'text/html'
+permalinkable = false
+noUgly = true
