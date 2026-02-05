@@ -1,5 +1,6 @@
-{{/* Must list all standard buttons (unless you want to remove them) - in order of appearance */}}
-{{ partial "topbar/button/edit.html"     (dict "page" .) }}
+{{/* Must list all standard buttons (unless you want to remove them) - in order
+of appearance */}}
+<!--{{ partial "topbar/button/edit.html"     (dict "page" .) }}
 {{ partial "topbar/button/edit-wysiwyg.html" (dict "page" .) }}      {{/* custom wysiwyg editor button */}}
 {{ partial "topbar/button/source.html"   (dict "page" .) }}
 {{ partial "topbar/button/markdown.html" (dict "page" .) }}
@@ -7,4 +8,81 @@
 {{ partial "topbar/button/variantswitcher.html" (dict "page" .) }}   {{/* custom Light/Dark color ("variant") switcher button */}}
 {{ partial "topbar/button/prev.html"     (dict "page" .) }}
 {{ partial "topbar/button/next.html"     (dict "page" .) }}
-{{ partial "topbar/button/more.html" (dict "page" .) }}              {{/* More menu is typically last */}}
+{{ partial "topbar/button/more.html" (dict "page" .) }}              {{/* More menu is typically last */}}-->
+<style>
+  @import url(https://fonts.bunny.net/css?family=inter:400,400i,600,600i|inter-tight:500,500i);
+
+  * {
+    color-scheme: light only !important;
+  }
+
+  /* Use INTERNAL namespace to override theme colors */
+  :root {
+    /*--INTERNAL-MAIN-font: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;*/
+    --INTERNAL-MAIN-font: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --INTERNAL-MAIN-letter-spacing: normal;
+    --INTERNAL-MAIN-TITLES-font: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    --INTERNAL-MAIN-TITLES-H1-font-variation-settings: none;
+    --INTERNAL-MAIN-TITLES-H2-font-variation-settings: none;
+    --INTERNAL-MAIN-font-variation-settings: none;
+
+    /*--INTERNAL-MAIN-BG-color: */
+    /*--INTERNAL-MENU-SECTIONS-BG-color: var(--INTERNAL-MAIN-BG-color);*/
+
+    --INTERNAL-PRIMARY-color: rgb(196 225 255);
+    --MENU-HEADER-BG-color: var(--INTERNAL-PRIMARY-color);
+    --INTERNAL-MENU-SECTIONS-BG-color: var(--INTERNAL-PRIMARY-color);
+
+    --INTERNAL-MENU-SECTIONS-LINK-color: black;
+    --INTERNAL-MENU-SECTIONS-ACTIVE-BG-color: var(--INTERNAL-MENU-SECTIONS-BG-color);
+    --INTERNAL-MENU-SECTIONS-LINK-HOVER-color: var(--INTERNAL-MENU-SECTIONS-LINK-color);
+    --INTERNAL-MENU-SEARCH-color: black;
+    --INTERNAL-MENU-SECTION-ACTIVE-CATEGORY-color: white;
+    --INTERNAL-MAIN-LINK-color: rgb(164 215 249);
+    --INTERNAL-MAIN-LINK-HOVER-color: var(--INTERNAL-MAIN-LINK-color);
+    /*--INTERNAL-PRIMARY-color: var(--PRIMARY-color, var(--MENU-HEADER-BG-color, rgba(125, 201, 3, 1)));*/
+    /*--INTERNAL-PRIMARY-HOVER-color: var(*/
+      /*--PRIMARY-HOVER-color,*/
+      /*var(--MENU-HEADER-BORDER-color, var(--INTERNAL-PRIMARY-color))*/
+    /*);*/
+    /*--INTERNAL-SECONDARY-color: var(
+      --SECONDARY-color,
+      var(--MAIN-LINK-color, rgba(72, 106, 201, 1))
+    );
+
+    --INTERNAL-ACCENT-color: var(--ACCENT-color, rgba(255, 215, 0, 1));
+    --INTERNAL-ACCENT-HOVER-color: var(
+      --ACCENT-HOVER-color,
+      rgba(255, 235, 120, 1)
+    );*/
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: none;
+    letter-spacing: default;
+    text-align: left;
+  }
+
+  .logo-title {
+    font-size: 18px !important;
+    padding: 8px;
+  }
+
+  #R-logo.R-default {
+    overflow: visible
+  }
+
+  #R-search-by {
+    background-color: var(--INTERNAL-PRIMARY-color);
+    border: black 1px solid;
+  }
+
+  main {
+    margin-top: 2em;
+  }
+
+  #R-sidebar ul.collapsible-menu > li > input + label > .fa-chevron-right {
+    display: none;
+  }
+</style>

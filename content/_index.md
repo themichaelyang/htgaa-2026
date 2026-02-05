@@ -1,13 +1,13 @@
 ---
-title: '<YOUR NAME HERE> — HTGAA Spring 2026'
+title: 'Michael Yang, Spring 2026'
 type: home
 ---
 
-![cover image]()
+<!--![cover image]()-->
 
-## {{% icon user %}} About me
+<!--## {{% icon user %}} About me-->
 
-### {{% icon address-card %}} Contact info
+<!--### {{% icon address-card %}} Contact info-->
 <!-- This block is a comment (which will not be displayed on your pages) with sample social media links.
      Copy a line, paste it above this comment and fill in the '...' to have that social media link on your homepage:
 - {{% icon envelope %}} [Email](mailto:...)
@@ -29,11 +29,14 @@ type: home
 <!-- The 'childrenof' calls below the homework/labs/projects headings here automatically list all your pages in those sections.
      You don't need to change them (and might want to leave them as-is for a couple weeks till they have more content in them).
      Then if you like you can try customizing their formatting, e.g. try switching to description="true" and/or type="card". -->
-## {{% icon book-open %}} Homework
+<!--## {{% icon book-open %}} Homework-->
+## Homework
 {{% childrenof path="/homework" type="tree" depth="1" sort="weight" description="false" %}}
 
-## {{% icon flask-vial %}} Labs
+<!--## {{% icon flask-vial %}} Labs-->
+## Labs
 {{% childrenof path="/labs"     type="tree" depth="1" sort="weight" description="false" %}}
 
-## {{% icon diagram-project %}} Projects
+<!--## {{% icon diagram-project %}} Projects-->
+## Projects
 {{% childrenof path="/projects" type="tree" depth="1" sort="weight" description="false" %}}
