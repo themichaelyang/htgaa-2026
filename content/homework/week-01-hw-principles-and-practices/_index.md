@@ -3,7 +3,7 @@ title: 'Week 1 HW: Principles and Practices'
 weight: 10
 ---
 
-![cover image]()
+<!--![cover image]()-->
 
 
 <!-- One of the questions this week asks you to fill in a table; that table is copied here from the course page's markdown

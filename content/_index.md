@@ -3,6 +3,11 @@ title: 'Michael Yang, Spring 2026'
 type: home
 ---
 
+## About me
+
+- [yang.money](https://yang.money)
+- [github.com/themichaelyang](https://github.com/themichaelyang)
+
 <!--![cover image]()-->
 
 <!--## {{% icon user %}} About me-->
