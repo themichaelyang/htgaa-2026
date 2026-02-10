@@ -22,21 +22,21 @@ A bio-FPGA has the possibility to be used for great benefit with many applicatio
 
 **Action 1: Engineer a genetic "off switch" into the bio-FPGA to stop proliferation any time.**
 - **Purpose:** We would build a genetic off switch to immediately turn off all genes of the bio-FPGA.
-- **Design:** This would involve researchers and industry as actors to build this prior to releasing the bio-FPGA. The government could also regulate by requiring all bio-FGPA and adjacent tools have such a fail-safe.
+- **Design:** This would involve researchers and industry as actors to build this prior to releasing the bio-FPGA. The government could also regulate by requiring all bio-FPGA and adjacent tools have such a fail-safe.
 - **Assumptions:** This assumes that such a technological solution could be reliably engineered and triggered.
 - **Risks:** The risks are that the technical fail-safe does not work, or could even cause problems if it does work because it could be abused to disable legitimate use cases.
 
-**Action 2: Regulate against use for biological warefare.**
+**Action 2: Regulate against use for biological warfare.**
 - **Purpose:** Although there are already regulations in place, we could craft regulation to specifically account for bio-FPGA technology.
 - **Design:** This would involve the government to understand the technology, the dangers, and pass appropriate laws preventing malicious use of bio-FPGAs.
 - **Assumptions:** This assumes that lawmakers would be motivated to pass regulation and that the public would be accepting of such regulation. It also assumes that lawmakers are able to craft good laws or adapt accordingly.
 - **Risks:** The risk is that excessive regulation could stifle adoption and research for beneficial use cases. Another risk is that lawmakers don't understand the science and pass inappropriate laws.
 
 **Action 3: Host a conference for researchers and industry to share new developments.** 
-- **Purpose:** To share beneficial use cases, foster collaboration, and diseminate research learnings.
+- **Purpose:** To share beneficial use cases, foster collaboration, and disseminate research learnings.
 - **Design:** This requires coordinating and organizing the research and industry community, as well as raising funds to host a venue.
 - **Assumptions:** I assume that researchers would be interested in attending and discussing.
-- **Risks:** The conference could be used to discuss malicious use-cases. The conference could also be quite ea rlier.
+- **Risks:** The conference could be used to develop malicious use-cases, or ethics could be overlooked in favor of scientific progress at all costs.
 
 ##### 4. Next, score (from 1-3 with, 1 as the best, or n/a) each of your governance actions against your rubric of policy goals.
 
@@ -73,13 +73,19 @@ A bio-FPGA has the possibility to be used for great benefit with many applicatio
 
 1. Nature’s machinery for copying DNA is called polymerase. What is the error rate of polymerase? How does this compare to the length of the human genome. How does biology deal with that discrepancy?
 
-According to the slides, the error rate of polymerase is 1:10^6^ (online it suggest that it can be even worse depending on the polymerase), or 1 in 1 million. The length of the human genome is 3.2 Gbp (3.2 * 10^9^), so at that rate there would be ~3.2 * 10^3^ (3,200) errors in the human genome per copy. That would be a lot of errors, but our in practice there are pathways that perform error correction, such as MutS.
+According to the slides, the error rate of polymerase is 1:10^6^ (online it suggest that it can be even worse depending on the polymerase), or 1 in 1 million. The length of the human genome is 3.2 Gbp (3.2 * 10^9^), so at that rate there would be ~3.2 * 10^3^ (3,200) errors in the human genome per copy. That would be a lot of errors, but there are additional pathways that perform error correction, such as MutS.
 
 2. How many different ways are there to code (DNA nucleotide code) for an average human protein? In practice what are some of the reasons that all of these different codes don’t work to code for the protein of interest?
 
-The slides mention the average human protein is 1036 base pairs. There are 4^1036^ ways to arrange the 4 nucleotides. 
+The slides mention the average human protein is 1036 base pairs. That is 345 codons, so 345 amino acids.
 
-Since amino acids can have multiple codons (3 bps), some of those will code to the same sequence. However, the probability is extremely low if you arrange these codes randomly that you'll get the protein of interest due to the sheer number of possibilities.
+Amino acids can have multiple corresponding codons. There are 20 amino acids and 4 possible nucleotides, so there are about 3 possible codons per amino acid.
+
+That is an estimate of 3^345^ ways to code for a given protein, a huge number.
+
+However, despite a synonymous codon coding for the same amino acid, the base pairs choice can affect the chemical bonds of the mRNA structure, affecting RNA cleavage rules.
+
+Another view is that there are 4^1035 possible nucleotides, which are very unlikely to code for the specific protein even with synonymous codons due to sheer possibility space.
 
 ### Homework Questions from Dr. LeProust
 
@@ -108,7 +114,7 @@ I'm answering question 1.
 
 1. [Using Google & Prof. Church’s slide #4] What are the 10 essential amino acids in all animals and how does this affect your view of the “Lysine Contingency”?
 
-The ten [essential amino acids](https://en.wikipedia.org/wiki/Essential_amino_acid) are:
+The ten [essential amino acids](https://open.oregonstate.education/animalnutrition/chapter/proteins-structure/) are:
 
 1. Histidine (H)
 2. Isoleucine (I)
@@ -119,7 +125,7 @@ The ten [essential amino acids](https://en.wikipedia.org/wiki/Essential_amino_ac
 7. Threonine (T)
 8. Tryptophan (W)
 9. Valine (V)
-10. Arginine (Arg)
+10. Arginine (R), sometimes considered conditionally essential.
 
 The "Lysine Contingency" is apparently from [Jurassic Park](https://jurassicpark.fandom.com/wiki/Lysine_contingency), which was a plot element in the movie that was a genetic modification to make the dinosaurs not to be able to produce Lysine so they would die off without human provided Lysine supplements.
 
