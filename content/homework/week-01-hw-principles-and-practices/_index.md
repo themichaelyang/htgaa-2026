@@ -123,9 +123,8 @@ The ten [essential amino acids](https://en.wikipedia.org/wiki/Essential_amino_ac
 
 The "Lysine Contingency" is apparently from [Jurassic Park](https://jurassicpark.fandom.com/wiki/Lysine_contingency), which was a plot element in the movie that was a genetic modification to make the dinosaurs not to be able to produce Lysine so they would die off without human provided Lysine supplements.
 
-However, Lysine is one of the 10 essential amino acids since animals cannot
-produce it. Theoretically, dinosaurs should also not be able to produce
-it already so this is a scientifically dubious plot point.
+However, Lysine is one of the 10 essential amino acids so animals cannot
+produce it, making this is a scientifically dubious plot point (the genetic modification would have done nothing).
 
 2. [Given slides #2 & 4 (AA:NA and NA:NA codes)] What code would you suggest for AA:AA interactions?
 3. [(Advanced students)] Given the one paragraph abstracts for these real 2026 grant programs sketch a response to one of them or devise one of your own:
