@@ -3,12 +3,13 @@ title: 'Week 1 HW: Principles and Practices'
 weight: 10
 ---
 
+## Class assignment
 
-#### 1. _First, describe a biological engineering application or tool you want to develop and why._
+##### 1. _First, describe a biological engineering application or tool you want to develop and why._
 
-I'm heavily inspired by Professor Jacobson call for a **"bio-FPGA"** tool, as well as his lecture about **cellular automata**. I'd like to develop a bio-FPGA that can be programmed to grow into arbitrary 2D patterns on a petri dish, using the machine learning technique mentioned in the lecture to reverse learn the cellular automata rules for growing a specific pattern. The learned CA rules can be encoded by genetically programming the bio-FPGA then using bacteria with the genes to grow an actual cell culture into the pattern, like the butterfly wing letter patterns in the lecture. If this is feasible, 3D patterns would be the next step, and one might even imagine a wild future of programmable plants that grow into the shapes of houses and furniture.
+I'm heavily inspired by Professor Jacobson's call for a **"bio-FPGA"** tool, as well as his lecture about **cellular automata**. I'd like to develop a bio-FPGA that can be programmed to grow into arbitrary 2D patterns on a petri dish, using the machine learning technique mentioned in the lecture to reverse learn the cellular automata rules for growing a specific pattern. The learned CA rules can be encoded by genetically programming the bio-FPGA then using bacteria with the genes to grow an actual cell culture into the pattern, like the butterfly wing letter patterns in the lecture. If this is feasible, 3D patterns would be the next step, and one might even imagine a wild future of programmable plants that grow into the shapes of houses and furniture.
 
-#### 2. _Next, describe one or more governance/policy goals related to ensuring that this application or tool contributes to an “ethical” future, like ensuring non-malfeasance (preventing harm). Break big goals down into two or more specific sub-goals._
+##### 2. _Next, describe one or more governance/policy goals related to ensuring that this application or tool contributes to an “ethical” future, like ensuring non-malfeasance (preventing harm). Break big goals down into two or more specific sub-goals._
 
 My primary goal is to **protect health and safety.** The sub-goals are:
   - Prevent the development of biological weapons.
@@ -17,7 +18,7 @@ My primary goal is to **protect health and safety.** The sub-goals are:
 
 A bio-FPGA has the possibility to be used for great benefit with many applications, but could also be abused.
 
-#### 3. _Next, describe at least three different potential governance “actions” by considering the four aspects below (Purpose, Design, Assumptions, Risks of Failure & “Success”)._
+##### 3. _Next, describe at least three different potential governance “actions” by considering the four aspects below (Purpose, Design, Assumptions, Risks of Failure & “Success”)._
 
 **Action 1: Engineer a genetic "off switch" into the bio-FPGA to stop proliferation any time.**
 - **Purpose:** We would build a genetic off switch to immediately turn off all genes of the bio-FPGA.
@@ -37,7 +38,7 @@ A bio-FPGA has the possibility to be used for great benefit with many applicatio
 - **Assumptions:** I assume that researchers would be interested in attending and discussing.
 - **Risks:** The conference could be used to discuss malicious use-cases. The conference could also be quite ea rlier.
 
-#### 4. Next, score (from 1-3 with, 1 as the best, or n/a) each of your governance actions against your rubric of policy goals.
+##### 4. Next, score (from 1-3 with, 1 as the best, or n/a) each of your governance actions against your rubric of policy goals.
 
 <!-- One of the questions this week asks you to fill in a table; that table is copied here from the course page's markdown
      (https://edit.htgaa.org/2026a-course-pages/webpages.git/src/branch/main/content/weeks/week-01/_index.md?display=source)
@@ -64,3 +65,37 @@ A bio-FPGA has the possibility to be used for great benefit with many applicatio
 | &bull; Feasibility?                                 |     2    |    1     |      1   |
 | &bull; Not impede research                          |     1    |    3     |      1   |
 | &bull; Promote constructive applications            |     3    |    1     |      1   |
+
+
+## Week 2 lecture prep
+
+### Homework Questions from Professor Jacobson
+
+1. Nature’s machinery for copying DNA is called polymerase. What is the error rate of polymerase? How does this compare to the length of the human genome. How does biology deal with that discrepancy?
+
+According to the slides, the error rate of polymerase is 1:10^6^ (online it suggest that it can be even worse depending on the polymerase), or 1 in 1 million. The length of the human genome is 3.2 Gbp (3.2 * 10^9^), so at that rate there would be ~3.2 * 10^3^ (3,200) errors in the human genome per copy. That would be a lot of errors, but our in practice there are pathways that perform error correction, such as MutS.
+
+2. How many different ways are there to code (DNA nucleotide code) for an average human protein? In practice what are some of the reasons that all of these different codes don’t work to code for the protein of interest?
+
+The slides mention the average human protein is 1036 base pairs. There are 4^1036^ ways to arrange the 4 nucleotides. 
+
+Since amino acids can have multiple codons (3 bps), some of those will code to the same sequence. However, the probability is extremely low if you arrange these codes randomly that you'll get the protein of interest due to the sheer number of possibilities.
+
+### Homework Questions from Dr. LeProust
+
+1. What’s the most commonly used method for oligo synthesis currently?
+
+2. Why is it difficult to make oligos longer than 200nt via direct synthesis?
+
+3. Why can’t you make a 2000bp gene via direct oligo synthesis?
+
+### Homework Question from George Church
+
+Choose ONE of the following three questions to answer; and please cite AI prompts or paper citations used, if any.
+
+1. [Using Google & Prof. Church’s slide #4] What are the 10 essential amino acids in all animals and how does this affect your view of the “Lysine Contingency”?
+2. [Given slides #2 & 4 (AA:NA and NA:NA codes)] What code would you suggest for AA:AA interactions?
+3. [(Advanced students)] Given the one paragraph abstracts for these real 2026 grant programs sketch a response to one of them or devise one of your own:
+- https://arpa-h.gov/explore-funding/programs/boss
+- https://www.darpa.mil/research/programs/smart-rbc
+- https://www.darpa.mil/research/programs/go
