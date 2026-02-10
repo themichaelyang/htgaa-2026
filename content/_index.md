@@ -16,9 +16,9 @@ img {
 
 ----
 
-Hello! I'm Michael.
+Hello! I'm Michael. 
 
-I live in sunny Los Angeles, and I enjoy learning, programming, and running.
+I live in sunny Los Angeles, California. I enjoy learning, programming, and running.
 
 I'm also starting up a HTGAA [paper reading group](https://docs.google.com/document/d/10-a09orFusFQWA1Vr5pd95Of-dsaxk9ZtuK8Mwu6lEY/edit?pli=1&tab=t.0). We'd love to have you join us!
 

@@ -3,8 +3,41 @@ title: 'Week 1 HW: Principles and Practices'
 weight: 10
 ---
 
-<!--![cover image]()-->
 
+#### 1. _First, describe a biological engineering application or tool you want to develop and why._
+
+I'm heavily inspired by Professor Jacobson call for a **"bio-FPGA"** tool, as well as his lecture about **cellular automata**. I'd like to develop a bio-FPGA that can be programmed to grow into arbitrary 2D patterns on a petri dish, using the machine learning technique mentioned in the lecture to reverse learn the cellular automata rules for growing a specific pattern. The learned CA rules can be encoded by genetically programming the bio-FPGA then using bacteria with the genes to grow an actual cell culture into the pattern, like the butterfly wing letter patterns in the lecture. If this is feasible, 3D patterns would be the next step, and one might even imagine a wild future of programmable plants that grow into the shapes of houses and furniture.
+
+#### 2. _Next, describe one or more governance/policy goals related to ensuring that this application or tool contributes to an “ethical” future, like ensuring non-malfeasance (preventing harm). Break big goals down into two or more specific sub-goals._
+
+My primary goal is to **protect health and safety.** The sub-goals are:
+  - Prevent the development of biological weapons.
+  - Prevent outbreak of harmful bacteria.
+  - Maximize productive use-cases.
+
+A bio-FPGA has the possibility to be used for great benefit with many applications, but could also be abused.
+
+#### 3. _Next, describe at least three different potential governance “actions” by considering the four aspects below (Purpose, Design, Assumptions, Risks of Failure & “Success”)._
+
+**Action 1: Engineer a genetic "off switch" into the bio-FPGA to stop proliferation any time.**
+- **Purpose:** We would build a genetic off switch to immediately turn off all genes of the bio-FPGA.
+- **Design:** This would involve researchers and industry as actors to build this prior to releasing the bio-FPGA. The government could also regulate by requiring all bio-FGPA and adjacent tools have such a fail-safe.
+- **Assumptions:** This assumes that such a technological solution could be reliably engineered and triggered.
+- **Risks:** The risks are that the technical fail-safe does not work, or could even cause problems if it does work because it could be abused to disable legitimate use cases.
+
+**Action 2: Regulate against use for biological warefare.**
+- **Purpose:** Although there are already regulations in place, we could craft regulation to specifically account for bio-FPGA technology.
+- **Design:** This would involve the government to understand the technology, the dangers, and pass appropriate laws preventing malicious use of bio-FPGAs.
+- **Assumptions:** This assumes that lawmakers would be motivated to pass regulation and that the public would be accepting of such regulation. It also assumes that lawmakers are able to craft good laws or adapt accordingly.
+- **Risks:** The risk is that excessive regulation could stifle adoption and research for beneficial use cases. Another risk is that lawmakers don't understand the science and pass inappropriate laws.
+
+**Action 3: Host a conference for researchers and industry to share new developments.** 
+- **Purpose:** To share beneficial use cases, foster collaboration, and diseminate research learnings.
+- **Design:** This requires coordinating and organizing the research and industry community, as well as raising funds to host a venue.
+- **Assumptions:** I assume that researchers would be interested in attending and discussing.
+- **Risks:** The conference could be used to discuss malicious use-cases. The conference could also be quite ea rlier.
+
+#### 4. Next, score (from 1-3 with, 1 as the best, or n/a) each of your governance actions against your rubric of policy goals.
 
 <!-- One of the questions this week asks you to fill in a table; that table is copied here from the course page's markdown
      (https://edit.htgaa.org/2026a-course-pages/webpages.git/src/branch/main/content/weeks/week-01/_index.md?display=source)
@@ -15,19 +48,19 @@ weight: 10
      for each column; DO NOT enter any newlines between the |  | markers, that starts a new table row right there!
  -->
 
-| Does the option:                                    | Option 1 | Option 2 | Option 3 |
+| Does the action:                                    | Action 1 | Action 2 | Action 3 |
 |-----------------------------------------------------|----------|----------|----------|
 | **Enhance Biosecurity**                             |          |          |          |
-| &bull; By preventing incidents                      |          |          |          |
-| &bull; By helping respond                           |          |          |          |
+| &bull; By preventing incidents                      |     3    |    1     |      2   |
+| &bull; By helping respond                           |     1    |    3     |      3   |
 | **Foster Lab Safety**                               |          |          |          |
-| &bull; By preventing incident                       |          |          |          |
-| &bull; By helping respond                           |          |          |          |
+| &bull; By preventing incident                       |     3    |    1    |      2   |
+| &bull; By helping respond                           |     1    |    3     |      3   |
 | **Protect the environment**                         |          |          |          |
-| &bull; By preventing incidents                      |          |          |          |
-| &bull; By helping respond                           |          |          |          |
+| &bull; By preventing incidents                      |     3    |    1     |      2   |
+| &bull; By helping respond                           |     1    |    3     |      3   |
 | **Other considerations**                            |          |          |          |
-| &bull; Minimizing costs and burdens to stakeholders |          |          |          |
-| &bull; Feasibility?                                 |          |          |          |
-| &bull; Not impede research                          |          |          |          |
-| &bull; Promote constructive applications            |          |          |          |
+| &bull; Minimizing costs and burdens to stakeholders |     2    |    3     |      1   |
+| &bull; Feasibility?                                 |     2    |    1     |      1   |
+| &bull; Not impede research                          |     1    |    3     |      1   |
+| &bull; Promote constructive applications            |     3    |    1     |      1   |
