@@ -85,15 +85,48 @@ Since amino acids can have multiple codons (3 bps), some of those will code to t
 
 1. What’s the most commonly used method for oligo synthesis currently?
 
+The phosphoramidite method.
+
 2. Why is it difficult to make oligos longer than 200nt via direct synthesis?
 
+The coupling step is not possible to have perfect efficiency. That step is repeated per cycle, and each additional base requires the cycle to repeat. This means that longer oligos become dramatically harder to make, even with extremely high efficiencies:
+
+![images/oligo-table.png](images/oligo-table.png)
+
+I found the table from [this PDF](https://www.biotage.com/hubfs/bynder/Document/PPS676-biotage-solid-phase-oligonucleotide-synthesis-white-paper.pdf).
+
 3. Why can’t you make a 2000bp gene via direct oligo synthesis?
+
+The above answer explains why we can't synthesize longer oligos. At 2000bp, the probabilities become near impossible even at the highest efficiencies.
+
 
 ### Homework Question from George Church
 
 Choose ONE of the following three questions to answer; and please cite AI prompts or paper citations used, if any.
 
+I'm answering question 1.
+
 1. [Using Google & Prof. Church’s slide #4] What are the 10 essential amino acids in all animals and how does this affect your view of the “Lysine Contingency”?
+
+The ten [essential amino acids](https://en.wikipedia.org/wiki/Essential_amino_acid) are:
+
+1. Histidine (H)
+2. Isoleucine (I)
+3. Leucine (L)
+4. Lysine (K)
+5. Methionine (M)
+6. Phenylalanine (F)
+7. Threonine (T)
+8. Tryptophan (W)
+9. Valine (V)
+10. Arginine (Arg)
+
+The "Lysine Contingency" is apparently from [Jurassic Park](https://jurassicpark.fandom.com/wiki/Lysine_contingency), which was a plot element in the movie that was a genetic modification to make the dinosaurs not to be able to produce Lysine so they would die off without human provided Lysine supplements.
+
+However, Lysine is one of the 10 essential amino acids since animals cannot
+produce it. Theoretically, dinosaurs should also not be able to produce
+it already so this is a scientifically dubious plot point.
+
 2. [Given slides #2 & 4 (AA:NA and NA:NA codes)] What code would you suggest for AA:AA interactions?
 3. [(Advanced students)] Given the one paragraph abstracts for these real 2026 grant programs sketch a response to one of them or devise one of your own:
 - https://arpa-h.gov/explore-funding/programs/boss
