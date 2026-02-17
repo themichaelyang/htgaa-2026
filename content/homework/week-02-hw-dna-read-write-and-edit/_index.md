@@ -5,7 +5,7 @@ weight: 10
 
 # Part 0: Basics of Gel Electrophoresis
 
-I watched the lecture, recitation, and read the lab. Essentially, we use the negative charge of DNA to pull DNA fragments towards a positive cathode in an porous agarose gel. Larger DNA fragments move slower in the agarose gel.
+I watched the lecture, recitation, and read the lab. Essentially, we use the negative charge of DNA to pull DNA fragments towards a positive anode in a porous agarose gel. Larger DNA fragments move slower in the agarose gel.
 
 # Part 1: Benchling & In-silico *Gel Art*
 
@@ -128,3 +128,73 @@ I imported that into Twist and added the vector. Here is [a link to the Benchlin
 
 ![images/week-02/twist-plasmid.png](images/week-02/twist-plasmid.png)
 ![]()
+
+## Part 5: DNA Read/Write/Edit
+
+### 5.1 DNA Read
+
+#### (i) What DNA would you want to sequence (e.g., read) and why?
+
+I'd like to sequence DNA of the human microbiome. There's been recent research about how beneficial flora of the gut and skin microbiome contribute to our health, and there's already a significant effort to sequence our microbiome in the [Human Microbiome Project](https://en.wikipedia.org/wiki/Human_Microbiome_Project).
+
+I would also be interested in the widespread sequencing and cataloguing of viruses that make up the common cold. I think it could be useful to detect the geographic spread of these viruses and how they mutate over time, to potential contribute to a cure.
+
+#### (ii) In lecture, a variety of sequencing technologies were mentioned. What technology or technologies would you use to perform sequencing on your DNA and why?
+
+I would use Sanger Sequencing, since it's a straightforward and well-tested technique, and I understand it the best.
+
+1. Is your method first-, second- or third-generation or other? How so?
+
+Sanger Sequencing is a first-generation technique. It's the earliest and most classic form of sequencing.
+
+2. What is your input? How do you prepare your input (e.g. fragmentation, adapter ligation, PCR)? List the essential steps.
+
+The input is DNA, regular nucleotides (d*), chain-terminating nucleotides (dd*), primer (like in PCR), DNA-polymerase. You prepare the input by PCRing the sample to have lots of DNA.
+
+3. What are the essential steps of your chosen sequencing technology, how does it decode the bases of your DNA sample (base calling)?
+
+You thermocycle the amplified sample with the nucleotides, primers, and polymerases to build many DNA fragments. These DNA fragments will be different lengths because probabilistically each fragment will incorporate a chain-terminating nucleotide which stops polymerization. Finally, the fragments are run through electrophoresis and imaged one base pair at a time to get the sequence.
+
+4. What is the output of your chosen sequencing technology?
+
+The result is the electrophoresis imaging data, which can be processed to determine the most likely base pair at each position.
+
+### 5.2 DNA Write
+
+#### (i) What DNA would you want to synthesize (e.g., write) and why?
+
+I would want to synthesize DNA origami, as art! I'm curious what it would take to make the smallest art pieces.
+
+#### (ii) What technology or technologies would you use to perform this DNA synthesis and why?
+
+I would use the phosphoramidite method.
+
+1. What are the essential steps of your chosen sequencing [sic; synthesis?] methods?
+
+Deprotection, coupling, capping, oxidation, and repeat.
+
+2. What are the limitations of your sequencing [sic; synthesis?] method (if any) in terms of speed, accuracy, scalability?
+
+The limitation, as discussed last homework, is the length of DNA oligos that can be synthesized with this technique. However, this isn't a problem for DNA origami, which doesn't need full length DNA.
+
+### 5.3 DNA Edit
+
+#### (i) What DNA would you want to edit and why?
+
+I would edit human DNA, for example to cure hearing loss as a gene therapy.
+
+#### (ii) What technology or technologies would you use to perform these DNA edits and why?
+
+I would use CRISPR-Cas9, since it is the most popular technique today.
+
+1. How does your technology of choice edit DNA? What are the essential steps?
+
+Cas9 cuts the DNA, then introducing the edits via homology directed repair.
+
+2. What preparation do you need to do (e.g. design steps) and what is the input (e.g. DNA template, enzymes, plasmids, primers, guides, cells) for the editing?
+
+The guide RNA for Cas9 needs to be designed, as well as the template DNA (for knock-ins).
+
+3. What are the limitations of your editing methods (if any) in terms of efficiency or precision?
+
+Homology-directed repair is not entirely efficient, since the ends that Cas9 break could rejoin without the knock-in sequence. Performing CRISPR in humans (rather than bacteria or cell cultures) requires sophisticated deliveries to get to the target cells or tissues.
