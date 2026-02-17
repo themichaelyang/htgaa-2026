@@ -98,7 +98,7 @@ ATGAAAGAACTGACCATGCTGAGCCTGAGCTTCTTTTTTGTGAGCGCGCTGCTGGCGGCGGCAGCGAACCCGCTGCTGAG
 
 ## 3.4. You have a sequence! Now what?
 
-Since I chose E. Coli, we can order the gene with a promoter in a plasmid, then use a cell-dependent method of heat shocking the E. Coli to embed the plasid, then cultivating the E. Coli to produce lots of this protein.
+Since I chose E. Coli, we can order the gene with a promoter in a plasmid, then use a cell-dependent method of heat shocking the E. Coli to embed the plasmid, then cultivating the E. Coli to produce lots of this protein.
 
 This uses the natural plasmid gene expression mechanisms of E. Coli to transcribe and translate the protein.
 
