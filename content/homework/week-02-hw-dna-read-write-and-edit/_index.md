@@ -28,7 +28,7 @@ img[src*="tblastn-miraculin"] {
 }*/
 </style>
 
-I spent some time playing around with Ronan's gel art site to make a pattern (below on the left). I noticed that some of the restriction enzymes in the gel art tool weren't on the HTGAA enzyme list, so I didn't use them them.
+I spent some time playing around with Ronan's gel art site to make a pattern (below on the left). I noticed that some of the restriction enzymes in the gel art tool weren't on the HTGAA enzyme list, so I didn't use them.
 
 I think it looks kind of like Darth Vader.
 
@@ -106,7 +106,7 @@ This uses the natural plasmid gene expression mechanisms of E. Coli to transcrib
 
 I followed the steps to make provided sfGFP sequence in Benchling. Here is [my Benchling project](https://benchling.com/s/seq-ulqEgm6yogDWhYf7bt9E?m=slm-3ethR7RSz2VuvDjsf7PP).
 
-Here is the FASTA file of the expression casette:
+Here is the FASTA file of the expression cassette:
 
 ```
 >E. coli sfGFP
@@ -137,7 +137,7 @@ I imported that into Twist and added the vector. Here is [a link to the Benchlin
 
 I'd like to sequence DNA of the human microbiome. There's been recent research about how beneficial flora of the gut and skin microbiome contribute to our health, and there's already a significant effort to sequence our microbiome in the [Human Microbiome Project](https://en.wikipedia.org/wiki/Human_Microbiome_Project).
 
-I would also be interested in the widespread sequencing and cataloguing of viruses that make up the common cold. I think it could be useful to detect the geographic spread of these viruses and how they mutate over time, to potential contribute to a cure.
+I would also be interested in the widespread sequencing and cataloguing of viruses that make up the common cold. I think it could be useful to detect the geographic spread of these viruses and how they mutate over time, to potentially contribute to a cure.
 
 #### (ii) In lecture, a variety of sequencing technologies were mentioned. What technology or technologies would you use to perform sequencing on your DNA and why?
 
@@ -181,7 +181,7 @@ The limitation, as discussed last homework, is the length of DNA oligos that can
 
 #### (i) What DNA would you want to edit and why?
 
-I would edit human DNA, for example to cure hearing loss and tinnitus as a gene therapy. Hearing loss is permanent and affects 5% of the world population. Noise exposure from work and the environment also contribute to increased rates of hearing loss. Birds, unlike humans, can [regenerate inner ear cells](https://www.audiology.org/some-animals-can-regenerate-hearing-and-we-now-know-how/), and researchers have demonstrated regrowth in cell cultures so there is a theoretical target for gene therapy. There have already been successful gene therapy treatments for deafness in children due to congenial disorders.
+I would edit human DNA, for example to cure hearing loss and tinnitus as a gene therapy. Hearing loss is permanent and affects 5% of the world population. Noise exposure from work and the environment also contribute to increased rates of hearing loss. Birds, unlike humans, can [regenerate inner ear cells](https://www.audiology.org/some-animals-can-regenerate-hearing-and-we-now-know-how/), and researchers have demonstrated regrowth in cell cultures so there is a theoretical target for gene therapy. There have already been successful gene therapy treatments for deafness in children due to congenital disorders.
 
 #### (ii) What technology or technologies would you use to perform these DNA edits and why?
 
