@@ -181,7 +181,7 @@ The limitation, as discussed last homework, is the length of DNA oligos that can
 
 #### (i) What DNA would you want to edit and why?
 
-I would edit human DNA, for example to cure hearing loss as a gene therapy.
+I would edit human DNA, for example to cure hearing loss and tinnitus as a gene therapy. Hearing loss is permanent and affects 5% of the world population. Noise exposure from work and the environment also contribute to increased rates of hearing loss. Birds, unlike humans, can [regenerate inner ear cells](https://www.audiology.org/some-animals-can-regenerate-hearing-and-we-now-know-how/), and researchers have demonstrated regrowth in cell cultures so there is a theoretical target for gene therapy. There have already been successful gene therapy treatments for deafness in children due to congenial disorders.
 
 #### (ii) What technology or technologies would you use to perform these DNA edits and why?
 
