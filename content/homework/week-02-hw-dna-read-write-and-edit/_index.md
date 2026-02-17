@@ -159,6 +159,8 @@ You thermocycle the amplified sample with the nucleotides, primers, and polymera
 
 The result is the electrophoresis imaging data, which can be processed to determine the most likely base pair at each position.
 
+One limitation of the technique is that you need a pure sample of DNA, so it may be inefficient for the volumes of organisms we'd want to sequence.
+
 ### 5.2 DNA Write
 
 #### (i) What DNA would you want to synthesize (e.g., write) and why?
