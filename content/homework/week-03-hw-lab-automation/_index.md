@@ -14,7 +14,7 @@ My artwork is here: https://rcdonovan.com/?id=vmns94wqt45wpqc
 
 I read [Assembly of small silica nanoparticles using lipid-tethered DNA ‘bonds’](https://pubs.rsc.org/en/content/articlelanding/2025/sm/d5sm00924c). This paper used a novel assembly using DNA by by embedding silica nanoparticles in a lipid bilayer, embedding the cholesterol end of a DNA-cholesterol molecule within the bilayer, then assembling the nanoparticles with complementary sticky end "bridge" DNA. This is best explained with the image from the paper below:
 
-![images/week-03/silica-nanoparticles.gif]](images/week-03/silica-nanoparticles.gif)
+![images/week-03/silica-nanoparticles.gif](images/week-03/silica-nanoparticles.gif)
 
 They used Opentrons to rapidly iterate on and evalute different concentrations of DNA-Chol, NaCL, and bridge DNA in the assembly mixture. These were then screened with SAXS to determine the structural qualities of each sample.
 
