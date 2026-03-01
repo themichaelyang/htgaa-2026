@@ -7,11 +7,13 @@ weight: 10
 
 My artwork is here: https://rcdonovan.com/?id=vmns94wqt45wpqc
 
-![images/week-03/tomato.png](images/week-03/tomato.png)
+![images/week-03/tomato-simulation.png](images/week-03/tomato-simulation.png)
 
-I uploaded an image of tomatoes but it didn't render well, so I modified it significantly by hand with the editor.
+I used Ronan's tool to make this. I uploaded an image of tomatoes but it didn't render well, so I modified it significantly by hand with the editor.
 
-I attended the Saturday session on Zoom with Ronan, Michelle, and Ice at Ginkgo Bioworks.
+Then, I attended the Saturday session on Zoom with Ronan, Michelle, and Ice at Ginkgo Bioworks. Here's the end result:
+
+![images/week-03/tomato-actual.png](images/week-03/tomato-actual.png)
 
 # Post-Lab Questions
 
@@ -26,3 +28,5 @@ They used Opentrons to rapidly iterate on and evalute different concentrations o
 2. Write a description about what you intend to do with automation tools for your final project. You may include example pseudocode, Python scripts, 3D printed holders, a plan for how to use Ginkgo Nebula, and more. You may reference this week’s recitation slide deck for lab automation details.
 
 One project idea I have is genetically modifying trees for use in urban areas. I'd like to use automation tools to permute different genetic combinations. I envision custom modules that could germinate and monitor an array of seeds for different qualities.
+
+For example, I create a module with grow lights and watering capabilities that can care for the different seed variants and cameras to compare growth rates.
