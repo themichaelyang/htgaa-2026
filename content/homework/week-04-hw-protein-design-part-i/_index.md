@@ -56,3 +56,62 @@ Yes, β-sheets give spider silk its unique properties, which inspired the design
 11. Design a β-sheet motif that forms a well-ordered structure.
 
 We can use the rule from Shugang's slides: alternate hydrophobic and hydrophillic for every other amino acid.
+
+# Part B: Protein Analysis and Visualization
+
+I'm picking the same protein as in week 1: [Miraculin](https://en.wikipedia.org/wiki/Miraculin), a taste altering protein.
+
+## Amino acid sequence:
+
+*How long is it? What is the most frequent amino acid? You can use this Colab notebook to count the frequency of amino acids.*
+
+```
+MKELTMLSLSFFFVSALLAAAANPLLSAADSAPNPVLDIDGEKLRTGTNYYIVPVLRDHGGGLTVSATTPNGTFVCPPRVVQTRKEVDHDRPLAFFPENPKEDVVRVSTDLNINFSAFMPCRWTSSTVWRLDKYDESTGQYFVTIGGVKGNPGPETISSWFKIEEFCGSGFYKLVFCPTVCGSCKVKCGDVGIYIDQKGRRRLALSDKPFAFEFNKTVYF
+```
+
+Using the Colab, I got:
+
+```
+The length of the protein is: 220 aminoacids.
+The most common amino acid is: V, which appears 20 times.
+```
+
+*How many protein sequence homologs are there for your protein? Hint: Use Uniprot’s BLAST tool to search for homologs.*
+
+BLAST yielded [249 similar proteins](https://www.uniprot.org/blast/uniprotkb/ncbiblast-R20260303-111319-0958-60833062-p2m/overview) with significant identities (~50%), high scores (~200), and low e-values (< 0.05).
+
+These include proteins from tea, fruit, and tobacco.
+
+*Does your protein belong to any protein family?*
+
+According to [UniProt](https://www.uniprot.org/uniprotkb/P13087/entry):
+> Belongs to the protease inhibitor I3 (leguminous Kunitz-type inhibitor) family.
+
+## Identify the structure page of your protein in RCSB
+
+Miraculin isn't in RCSB, so I switched to [D7TY99](https://www.uniprot.org/uniprotkb/D7TY99/entry), a homolog found in grapes.
+
+```
+>5YH4_1|Chain A|mirauclin-like protein|Vitis vinifera (29760)
+ESAPDPVLDTEGKQLRSGVDYYILPVIRGRGGGLTLASTGNENCPLDVVQEQHEVSNGLPLTFTPVNPKKGVIRVSTDHNIKFSASTICVQSTLWKLEYDESSGQRFVTTGGVEGNPGRETLDNWFKIEKYEDDYKLVFCPTVCDFCKPVCGDIGIYIQNGYRRLALSDVPFKVMFKKA
+```
+
+This one does have an [RCSB entry](https://www.rcsb.org/3d-view/5YH4).
+
+## Open the structure of your protein in any 3D molecule visualization software
+
+Here it is visualized in PyMol (different visualization types on the left):
+
+![images/week-04/pymol.png](images/week-04/pymol.png)
+
+It has more sheets than helixes. Here is the secondary structure sheets colored yellow and helix colored red.
+
+![images/week-04/secondary-structure.png](images/week-04/secondary-structure.png)
+
+Here with the residue types colored with orange for hydrophobic and cyan for hydrophilic. The regions alternate and looks like more hydrophilic:
+
+![images/week-04/residue.png](images/week-04/residue.png)
+
+Finally, the surface of the protein. There are at least three "holes" that look like binding sites:
+
+![images/week-04/surface.png](images/week-04/surface.png)
