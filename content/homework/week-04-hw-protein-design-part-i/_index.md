@@ -120,15 +120,51 @@ Finally, the surface of the protein. There are at least three "holes" that look 
 
 For the ML tools, I'll be using [Fel d 1](https://www.rcsb.org/structure/1ZKR), which is a major cat allergen protein.
 
+It's made of two linked peptides: [Major allergen I polypeptide chain 1
+](https://www.rcsb.org/groups/sequence/polymer_entity/P30438) and [Major allergen I polypeptide chain 2
+](https://www.rcsb.org/groups/sequence/polymer_entity/P30440).
+
 ```
 >1ZKR_1|Chains A, B|Major allergen I polypeptide, fused chain 1, chain 2|Felis catus (9685)
 MEICPAVKRDVDLFLTGTPDEYVEQVAQYKALPVVLENARILKNCVDAKMTEEDKENALSLLDKIYTSPLCVKMAETCPIFYDVFFAVANGNELLLDLSLTKVNATEPERTAMKKIQDCYVENGLISRVLDGLVMTTISSSKDCMGEHHHHHH
 ```
 
-Here's the mutation scan heatmap. It looks like the amino acids at the end of the protein are most sensitive to mutation.
+Here's the mutation scan heatmap. It looks like the amino acids at the end of the protein are most sensitive to mutation. We can also see that "W" tends to be a bad mutation anywhere in the protein.
 
 ![images/week-04/mutation-scan-heatmap.png](images/week-04/mutation-scan-heatmap.png)
 
 And here's the TSNE, it looks like it's not very closely related to the other proteins, which would make sense since it's a unique allergen (otherwise we might expect cat allergies to correlate with lots of other allergies).
 
 ![images/week-04/tsne.png](images/week-04/tsne.png)
+
+Here's the predicted fold, colored based on confidence. The red at the end means lower confidence.
+
+![images/week-04/fold.png](images/week-04/fold.png)
+
+Here it is compared to the actual structure. On the left in cyan is the experimental structure, and on the right is the predicted fold. We can see that the main structure looks similar but the end is totally wrong, in line with the lower confidence. However, this is probably due to the His-tag at the end of the protein:
+
+![images/week-04/fold-comparison.png](images/week-04/fold-comparison.png)
+
+Note that in PDB data, there were two protein molecules included in the experimental data, apparently as [an asymmetric unit](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/missing-coordinates), so I removed one for better comparison.
+
+
+Here's the output of the inverse fold:
+
+```
+>5MBA, score=1.3652, fixed_chains=[], designed_chains=['A'], model_name=v_48_020
+SLSAAEADLAGKSWAPVFANKNANGLDFLVALFEKFPDSANFFADFKGKSVADIKASPKLRDVSSRIFTRLNEFVNNAANAGKMSAMLSQFAKEHVGFGVGSAQFENVRSMFPGFVASVAAPPAGADAAWTKLFGLIIDALKAAGA
+>T=0.1, sample=0, score=0.7874, seq_recovery=0.5000
+ALTAAQAAKLRAAFAPVAANAAANGRAFLLTLFAAYPELRELFPEFRGKSLEEIAASPALDAVATAFMTTLKTLVDTADDAAAMAALLAALAAAHVARGITAAHFERVRDLFPGFVASVAAPPAGADAAWDALWGLVIAALRAAGG
+```
+
+![images/week-04/inverse-fold.png](images/week-04/inverse-fold.png)
+
+```
+Generating sequences...
+>5MBA, score=1.3497, fixed_chains=[], designed_chains=['A'], model_name=v_48_020
+SLSAAEADLAGKSWAPVFANKNANGLDFLVALFEKFPDSANFFADFKGKSVADIKASPKLRDVSSRIFTRLNEFVNNAANAGKMSAMLSQFAKEHVGFGVGSAQFENVRSMFPGFVASVAAPPAGADAAWTKLFGLIIDALKAAGA
+>T=0.1, sample=0, score=0.7784, seq_recovery=0.4658
+ALTPEEAALLAAAMAPFFADREANGRAFLLRLFAAYPALAELFPAFRGKSLAEIAASPELPAIAGAVMDLLATLVANADDAAAMAALLAALAAAHVALGITAAHFEAIRDIFPGFIASVAPPPPGADAAWDRLLGDVIAALRAAGG
+
+New Sequence:ALTPEEAALLAAAMAPFFADREANGRAFLLRLFAAYPALAELFPAFRGKSLAEIAASPELPAIAGAVMDLLATLVANADDAAAMAALLAALAAAHVALGITAAHFEAIRDIFPGFIASVAPPPPGADAAWDRLLGDVIAALRAAGG
+```
