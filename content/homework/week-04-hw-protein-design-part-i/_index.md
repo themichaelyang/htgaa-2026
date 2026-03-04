@@ -115,3 +115,20 @@ Here with the residue types colored with orange for hydrophobic and cyan for hyd
 Finally, the surface of the protein. There are at least three "holes" that look like binding sites:
 
 ![images/week-04/surface.png](images/week-04/surface.png)
+
+# Using ML-based protein design tools
+
+For the ML tools, I'll be using [Fel d 1](https://www.rcsb.org/structure/1ZKR), which is a major cat allergen protein.
+
+```
+>1ZKR_1|Chains A, B|Major allergen I polypeptide, fused chain 1, chain 2|Felis catus (9685)
+MEICPAVKRDVDLFLTGTPDEYVEQVAQYKALPVVLENARILKNCVDAKMTEEDKENALSLLDKIYTSPLCVKMAETCPIFYDVFFAVANGNELLLDLSLTKVNATEPERTAMKKIQDCYVENGLISRVLDGLVMTTISSSKDCMGEHHHHHH
+```
+
+Here's the mutation scan heatmap. It looks like the amino acids at the end of the protein are most sensitive to mutation.
+
+![images/week-04/mutation-scan-heatmap.png](images/week-04/mutation-scan-heatmap.png)
+
+And here's the TSNE, it looks like it's not very closely related to the other proteins, which would make sense since it's a unique allergen (otherwise we might expect cat allergies to correlate with lots of other allergies).
+
+![images/week-04/tsne.png](images/week-04/tsne.png)
