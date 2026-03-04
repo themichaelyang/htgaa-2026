@@ -3,6 +3,12 @@ title: 'Week 4 HW: Protein Design, Part I'
 weight: 10
 ---
 
+<style>
+img {
+  max-height: 40vh;
+}
+</style>
+
 # Part A: Conceptual questions
 
 Answer any NINE of the following questions from Shuguang Zhang: (i.e. you can select two to skip)
@@ -168,3 +174,7 @@ ALTPEEAALLAAAMAPFFADREANGRAFLLRLFAAYPALAELFPAFRGKSLAEIAASPELPAIAGAVMDLLATLVANADD
 
 New Sequence:ALTPEEAALLAAAMAPFFADREANGRAFLLRLFAAYPALAELFPAFRGKSLAEIAASPELPAIAGAVMDLLATLVANADDAAAMAALLAALAAAHVALGITAAHFEAIRDIFPGFIASVAPPPPGADAAWDRLLGDVIAALRAAGG
 ```
+
+I tried added random pointwise mutations to the protein, and it didn't appear to affect the fold too much. For example:
+
+![images/week-04/pointwise-mutation-fold.png](images/week-04/pointwise-mutation-fold.png)
