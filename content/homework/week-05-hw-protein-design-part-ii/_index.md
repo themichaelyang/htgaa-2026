@@ -3,6 +3,10 @@ title: 'Week 5 HW: Protein Design, Part II'
 weight: 10
 ---
 
+> Superoxide dismutase 1 (SOD1) is a cytosolic antioxidant enzyme that converts superoxide radicals into hydrogen peroxide and oxygen. In its native state, it forms a stable homodimer and binds copper and zinc.
+> 
+> Mutations in SOD1 cause familial Amyotrophic Lateral Sclerosis (ALS). Among them, the A4V mutation (Alanine → Valine at residue 4) leads to one of the most aggressive forms of the disease. The mutation subtly destabilizes the N-terminus, perturbs folding energetics, and promotes toxic aggregation.
+
 # Part 1: Generate Binders with PepMLM
 
 I retrieved the [UniProt entry (P00441)](https://www.uniprot.org/uniprotkb/P00441/entry):
@@ -52,12 +56,38 @@ The final result:
 # Part 2: Evaluate Binders with AlphaFold3
 
 <style>
+table img {
+  max-height: 150px;
+  display: inline-block !important;
+}
+
+img {
+  max-height: 25vh;
+}
 </style>
 
-| # | Binder       | ipTM | pTM  | Fold |
-|---|--------------|------|------|------|
-| 0 | WHYPAVAVALKE | 0.29 | 0.77 | ![images/week-05/binder-0.png](images/week-05/binder-0.png) |
-| 1 | WLYPAVALELKE | |
-| 2 | KRYGAVAVRHWX | | 
-| 3 | WRYPAAGLELKE | |
-| 4 | FLYRWLPSRRGG | |
+Final results from AlphaFold3:
+
+| # | Binder       |  PP  | ipTM | pTM  | Fold |
+|---|--------------|------|------|------|------|
+| 0 | WHYPAVAVALKE | 9.6  | 0.29 | 0.77 | ![images/week-05/binder-0.png](images/week-05/binder-0.png) |
+| 1 | WLYPAVALELKE | 14.3 | 0.27 | 0.76 | ![images/week-05/binder-1.png](images/week-05/binder-1.png) |
+| 2 | KRYGAVAVRHWA* | 10.0 | 0.49 | 0.89 | ![images/week-05/binder-2.png](images/week-05/binder-2.png) |
+| 3 | WRYPAAGLELKE | 14.7 | 0.24 | 0.81 | ![images/week-05/binder-3.png](images/week-05/binder-3.png) |
+| 4 | FLYRWLPSRRGG | 20.6 | 0.32 | 0.82 | ![images/week-05/binder-4.png](images/week-05/binder-4.png) ![images/week-05/binder-4-view-2.png](images/week-05/binder-4-view-2.png) |
+
+*X replaced with A for AlphaFold
+
+## Record the ipTM score and briefly describe where the peptide appears to bind. Does it localize near the N-terminus where A4V sits? Does it engage the β-barrel region or approach the dimer interface? Does it appear surface-bound or partially buried?
+
+Here is the SODC homodimer structure:
+![images/week-05/homodimer.png](images/week-05/homodimer.png)
+
+And the structure of the "metal free" A4V SOD1:
+![images/week-05/sod1-a4v.png](images/week-05/sod1-a4v.png)
+
+All proteins seem largely surface-bound. Binders 0 and 2 seem to engage the beta-barrel region. None seem too close to the dimer interface. 
+
+## In a short paragraph, describe the ipTM values you observe and whether any PepMLM-generated peptide matches or exceeds the known binder.
+
+One exceeded the known binder: `KRYGAVAVRHWA`, most are around the same level as the known binder, although the binding sites look wildly different from binder to binder.
