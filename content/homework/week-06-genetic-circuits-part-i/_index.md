@@ -1,5 +1,5 @@
 ---
-title: 'Week 6 HW: Genetic Circuits Part I'
+title: 'Week 6 HW: Genetic Circuits I'
 weight: 10
 ---
 
